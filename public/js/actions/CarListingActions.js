@@ -1,4 +1,4 @@
-import Constants              from '../constants/SampleConstants';
+import Constants from '../constants/CarListingConstants';
 
 export const startInitialize = () => ({
   type: Constants.START_INITIALIZE

@@ -20,9 +20,7 @@ import {
 import thunk                  from 'redux-thunk';
 import { createHashHistory }  from 'history';
 import reducers               from '../reducers';
-import AppPage                from '../pages/AppPage';
-import SamplePage             from '../pages/SamplePage';
-import ExamplePage            from '../pages/ExamplePage';
+import CarListPage            from '../pages/CarListPage';
 
 const allReducers = combineReducers({
   ...reducers,
@@ -39,11 +37,7 @@ const appHistory = syncHistoryWithStore(history, store);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={appHistory}>
-      <Redirect from='/' to='sample' />
-      <Route path='/' component={AppPage}>
-        <Route path='sample' component={SamplePage}/>
-        <Route path='example' component={ExamplePage}/>
-      </Route>
+      <Route path='/' component={CarListPage}/>
     </Router>
   </Provider>,
   document.getElementById('content')

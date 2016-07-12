@@ -1,5 +1,5 @@
-import Immutable              from 'immutable';
-import Constants              from '../constants/SampleConstants';
+import Immutable from 'immutable';
+import Constants from '../constants/CarListingConstants';
 
 let initialState = {
   isInitializing : false,

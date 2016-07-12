@@ -1,6 +1,6 @@
 {
-  "name": "react-boilerplate",
-  "version": "0.2.3",
+  "name": "Project-X",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"

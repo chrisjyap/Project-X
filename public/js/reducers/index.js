@@ -1,7 +1,5 @@
-import sampleReducer from './sampleReducer';
-import exampleReducer from './exampleReducer';
+import carListing from './carListing';
 
 export default {
-  sampleReducer,
-  exampleReducer
+  carListing
 }

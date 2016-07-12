@@ -11,7 +11,12 @@ class CarListPage extends React.Component {
     this.actions = bindActionCreators(actions, this.props.dispatch);
   }
 
+  componentDidMount () {
+    this.actions.initialize();
+  }
+
   render () {
+    const {carListing} = this.props;
     return (
       <section className={styles.mainApp}>
         <h2> App Page </h2>

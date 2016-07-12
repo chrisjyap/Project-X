@@ -2,18 +2,19 @@ import Immutable from 'immutable';
 import Constants from '../constants/CarListingConstants';
 
 let initialState = {
-  isInitializing : false,
-  inputValue: 'Redux!'
+  cars: [],
+  max: 0,
+  min: 0
 };
 
 export default (state = Immutable.fromJS(initialState), action) => {
   switch(action.type){
-    case Constants.START_INITIALIZE:
-      return state.set('isInitializing', true);
-    case Constants.FINISH_INITIALIZE:
-      return state.set('isInitializing', false);
-    case Constants.UPDATE_INPUT:
-      return state.set('inputValue', action.value);
+    case Constants.INITIALIZE:
+      return state.merge({
+        cars: action.cars,
+        max: action.max,
+        min: action.min
+      });
     default:
       return state;
   }

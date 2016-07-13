@@ -26,6 +26,7 @@ module.exports = {
       loaders: ['react-hot', 'babel']
     },
     { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader!autoprefixer-loader?browsers=last 10 version'},
-    { test: /\.json$/, loader: 'json-loader'}
+    { test: /\.json$/, loader: 'json-loader'},
+    { test: /\.css$/, loader: 'style!css'}
   ]}
 }

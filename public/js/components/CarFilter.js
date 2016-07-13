@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import {FormControl} from 'react-bootstrap';
 
 import 'react-select/dist/react-select.css';
 
@@ -9,19 +9,13 @@ export default class extends React.Component {
   }
 
   render () {
-    const {make, makeFilter, max, min} = this.props;
-    const makeOptions = make.map(m=>({
-      value: m,
-      label: m
-    }));
+    const {makeFilter, max, min} = this.props;
     return (
       <section>
-        <Select
+        <FormControl
           value={makeFilter}
-          multi={true}
-          options={makeOptions}
-          placeholder='Filter by make'
-          onChange={this.props.onSelectMakeChange.bind(this)}
+          placeholder='Filter by Make'
+          onChange={this.props.onMakeInputChange.bind(this)}
         />
       </section>
     );

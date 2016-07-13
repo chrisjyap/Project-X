@@ -10,6 +10,7 @@ export default class extends React.Component {
 
   render () {
     const {cars} = this.props;
+    if(cars.length === 0) return <span> No cars based on filters </span>;
     return (
       <section className={styles.carGridContainer}>
         {

@@ -3,8 +3,7 @@ import Constants from '../constants/CarListingConstants';
 
 let initialState = {
   cars: [],
-  make: [],
-  makeFilter: [],
+  makeFilter: '',
   max: 0,
   min: 0,
 };
@@ -14,7 +13,6 @@ export default (state = Immutable.fromJS(initialState), action) => {
     case Constants.INITIALIZE:
       return state.merge({
         cars: action.cars,
-        make: action.make,
         max: action.max,
         min: action.min
       });

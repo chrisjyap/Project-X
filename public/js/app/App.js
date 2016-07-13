@@ -4,9 +4,7 @@ import { Provider }           from 'react-redux';
 import {
         Router,
         Route,
-        Redirect,
-        useRouterHistory,
-        hashHistory
+        useRouterHistory
 }                             from 'react-router';
 import {
         createStore,

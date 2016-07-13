@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions/CarListingActions';
-
+import CarGrid from '../components/CarGrid';
 import styles from '../../sass/main.scss';
 
 class CarListPage extends React.Component {
@@ -21,8 +21,9 @@ class CarListPage extends React.Component {
       <section className={styles.mainApp}>
         <h2> App Page </h2>
         <hr/>
-        <section className='app-container'>
-        </section>
+        <CarGrid
+          cars={carListing.cars}
+        />
       </section>
     );
   }

@@ -1,0 +1,15 @@
+:local(.carInfoCardContainer) {
+  width: 300px;
+  float: left;
+  margin: 5px;
+
+  .car-info-overlay {
+    color: white;
+    .overlay-header {
+      margin: 0 4px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

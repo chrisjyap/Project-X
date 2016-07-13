@@ -19,22 +19,26 @@ class CarListPage extends React.Component {
   render () {
     const {carListing} = this.props;
     let filteredCars = [];
-    if(carListing.makeFilter.length > 0) {
-      let regex = new RegExp(carListing.makeFilter, 'i');
-      carListing.cars.map(car => {
-        let name = car.name.split(' ');
-        if(regex.test(name[1])) filteredCars.push(car); //assuming make is on second index
-      });
-    }
-    else filteredCars = carListing.cars;
-
+    let regex = new RegExp(carListing.makeFilter, 'i');
+    carListing.cars.map(car => {
+      if(car.price > carListing.priceFilter.min && car.price < carListing.priceFilter.max) {
+        if(carListing.makeFilter) {
+          let name = car.name.split(' ');
+          if(regex.test(name[1])) filteredCars.push(car); //assuming make is on second index
+        }
+        else filteredCars.push(car);
+      }
+    });
+  
     return (
       <section className={styles.mainApp}>
         <CarFilter
           makeFilter={carListing.makeFilter}
           max={carListing.max}
           min={carListing.min}
+          priceFilter={carListing.priceFilter}
           onMakeInputChange={this.actions.updateMakeFilter.bind(this)}
+          onSliderChange={this.actions.updateSliderFilter.bind(this)}
         />
         <hr/>
         <CarGrid cars={filteredCars} />

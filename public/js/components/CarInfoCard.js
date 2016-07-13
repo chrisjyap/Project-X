@@ -32,8 +32,8 @@ export default class extends React.Component {
             overlay={(
               <div className='car-info-overlay'>
                 <div className='overlay-header'>
-                  <span className='info'>{car.name}</span>
-                  <span className='info'>{`$${car.price.toLocaleString()}`}</span>
+                  <span>{car.name}</span>
+                  <span>{`$${car.price.toLocaleString()}`}</span>
                 </div>
                 {
                   this.state.hover ?

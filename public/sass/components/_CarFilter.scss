@@ -1,0 +1,10 @@
+:local(.carFilterContainer) {
+  margin: 0 15px;
+  .input-slider-container {
+    margin-top: 25px;
+    .label-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

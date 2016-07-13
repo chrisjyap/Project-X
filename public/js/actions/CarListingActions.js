@@ -21,3 +21,11 @@ export const updateMakeFilter = (e) => ({
   type: Constants.UPDATE_MAKE,
   makeFilter: e.target.value
 });
+
+export const updateSliderFilter = (data) => ({
+  type: Constants.UPDATE_SLIDER,
+  priceFilter: {
+    min: data.values[0],
+    max: data.values[1]
+  }
+});

@@ -2,8 +2,10 @@ import Immutable from 'immutable';
 import Constants from '../constants/CarListingConstants';
 
 let initialState = {
+  isInitializing: true,
   cars: [],
   makeFilter: '',
+  histogram: {},
   max: 0,
   min: 0,
   priceFilter: {
@@ -16,7 +18,9 @@ export default (state = Immutable.fromJS(initialState), action) => {
   switch(action.type){
     case Constants.INITIALIZE:
       return state.merge({
+        isInitializing: false,
         cars: action.cars,
+        histogram: action.histogram,
         max: action.max,
         min: action.min,
         priceFilter: {
